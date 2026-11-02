@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Stay Hotel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #123b50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background: #1c536b;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+        .hero {
+            background: linear-gradient(
+                rgba(0,0,0,0.4),
+                rgba(0,0,0,0.4)
+            ), url("https://images.unsplash.com/photo-1566073771259-6a8506099945");
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h2 {
+            font-size: 40px;
+        }
+        .booking {
+            background: white;
+            padding: 25px;
+            margin: 25px auto;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #ccc;
+        }
+        .booking form {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit, minmax(150px, 1fr)
+            );
+            gap: 15px;
+        }
+        input, select, button {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button {
+            background: #e69b35;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #c77d1d;
+        }
+        .rooms {
+            padding: 30px;
+            text-align: center;
+        }
+        .room-container {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit, minmax(250px, 1fr)
+            );
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .room-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px #ccc;
+            text-align: left;
+        }
+        .room-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .room-info {
+            padding: 20px;
+        }
+        .room-info h3 {
+            color: #123b50;
+            margin-bottom: 10px;
+        }
+        .room-info p {
+            margin: 8px 0;
+        }
+        .price {
+            color: #e69b35;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .facilities {
+            background: #e8f0f3;
+            padding: 30px;
+            text-align: center;
+        }
+        .facilities p {
+            margin-top: 15px;
+            line-height: 2;
+        }
+        footer {
+            background: #123b50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 28px;
+            }
+            nav a {
+                margin: 5px;
+                font-size: 14px;
+            }
+            .rooms {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dream Stay Hotel</h1>
+        <p>Your comfort is our priority</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#booking">Booking</a>
+    </nav>
+    <section class="hero" id="home">
+        <div>
+            <h2>Welcome to Dream Stay</h2>
+            <p>Experience luxury and comfort</p>
+        </div>
+    </section>
+    <section class="booking" id="booking">
+        <h2>Book Your Stay</h2>
+        <br>
+        <form onsubmit="alert('Reservation submitted successfully!'); return false;">
+            <div>
+                <label>Check-in</label>
+                <input type="date" required>
+            </div>
+            <div>
+                <label>Check-out</label>
+                <input type="date" required>
+            </div>
+            <div>
+                <label>Guests</label>
+                <select required>
+                    <option>1 Guest</option>
+                    <option>2 Guests</option>
+                    <option>3 Guests</option>
+                    <option>4 Guests</option>
+                </select>
+            </div>
+            <div>
+                <label>Room Type</label>
+                <select required>
+                    <option>Standard Room</option>
+                    <option>Deluxe Room</option>
+                    <option>Suite Room</option>
+                </select>
+            </div>
+            <div>
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" required>
+            </div>
+            <div>
+                <label> </label>
+                <button type="submit">Reserve Now</button>
+            </div>
+        </form>
+    </section>
+    <section class="rooms" id="rooms">
+        <h2>Our Rooms</h2>
+        <p>Choose the perfect room for your stay</p>
+        <div class="room-container">
+            <div class="room-card">
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32"
+                     alt="Standard Room">
+                <div class="room-info">
+                    <h3>Standard Room</h3>
+                    <p>Comfortable room for two guests.</p>
+                    <p>Facilities: Wi-Fi, TV, AC</p>
+                    <p class="price">₹2,000 / Night</p>
+                    <button onclick="location.href='#booking'">
+                        Book Room
+                    </button>
+                </div>
+            </div>
+            <div class="room-card">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427"
+                     alt="Deluxe Room">
+                <div class="room-info">
+                    <h3>Deluxe Room</h3>
+                    <p>Luxury room with beautiful interiors.</p>
+                    <p>Facilities: Wi-Fi, AC, TV, Balcony</p>
+                    <p class="price">₹4,000 / Night</p>
+                    <button onclick="location.href='#booking'">
+                        Book Room
+                    </button>
+                </div>
+            </div>
+            <div class="room-card">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+                     alt="Suite Room">
+                <div class="room-info">
+                    <h3>Suite Room</h3>
+                    <p>Premium room with spacious interiors.</p>
+                    <p>Facilities: Wi-Fi, AC, TV, Pool</p>
+                    <p class="price">₹7,000 / Night</p>
+                    <button onclick="location.href='#booking'">
+                        Book Room
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="facilities" id="facilities">
+        <h2>Hotel Facilities</h2>
+        <p>
+            🏊 Swimming Pool |
+            🍽 Restaurant |
+            📶 Free Wi-Fi |
+            🚗 Parking |
+            ❄ Air Conditioning |
+            🏋 Gym
+        </p>
+    </section>
+    <footer>
+        <p>© 2026 Dream Stay Hotel</p>
+        <p>Contact: dreamstay@example.com</p>
+    </footer>
+</body>
+</html>
